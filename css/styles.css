@@ -1,0 +1,14 @@
+:root {
+    --strong-cyan: hsl(172, 67%, 45%)
+}
+
+button {
+    background-color: rgb(0, 24, 20);
+    border: 0;
+    color: rgb(47, 251, 254);
+    padding: .2em 1em;
+}
+
+.active {
+    background-color: rgb(0, 101, 84);
+}
