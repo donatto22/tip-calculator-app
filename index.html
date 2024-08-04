@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-   <link rel="stylesheet" href="./css/styles.css">
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
 </head>
+
 <body>
-
-  <div>
-    <label for="bill">Bill</label>
-    <input type="text" name="bill" id="bill" onchange='cambiarTotal()'>
-  </div>
-
-  <div>
-    Select Tip %
-    <div>
-      <button class="boton" onclick="cambiarPropina(this)">5%</button>
-      <button class="boton" onclick="cambiarPropina(this)">10%</button>
-      <button class="boton" onclick="cambiarPropina(this)">15%</button>
-      <button class="boton" onclick="cambiarPropina(this)">25%</button>
-      <button class="boton" onclick="cambiarPropina(this)">50%</button>
-      <input type="text" placeholder='Custom'>
+    <div id="calculator">
+        <div id="left">
+            <div class="form-input">
+                <label for="bill">Bill</label>
+                <input type="text" name="bill" id="bill" onchange='cambiarTotal()'>
+            </div>
+        
+            <div>
+                Select Tip %
+                <div id="grid-control">
+                    <button class="boton" onclick="cambiarPropina(this)">5%</button>
+                    <button class="boton" onclick="cambiarPropina(this)">10%</button>
+                    <button class="boton" onclick="cambiarPropina(this)">15%</button>
+                    <button class="boton" onclick="cambiarPropina(this)">25%</button>
+                    <button class="boton" onclick="cambiarPropina(this)">50%</button>
+                    <input type="text" placeholder='Custom'>
+                </div>
+            </div>
+        
+            <div class="form-input">
+                <label for="people">Number of People</label>
+                <input value='0' type="number" name="people" id="people" onchange='cambiarTotal()'>
+            </div>
+        </div>
+    
+        <div id="right">
+            <div id="money-description">
+                <div class="description">
+                    <div class="description-label">
+                        <div class="description-title">
+                            Tip Amount
+                        </div>
+                        <div class="description-min">
+                            / person
+                        </div>
+                    </div>
+    
+                    <span class="money"><b>$ </b><b id="propinaPorPersona">0.00</b></span>
+                </div>
+            
+                <div class="description">
+                    <div class="description-label">
+                        <div class="description-title">
+                            Total
+                        </div>
+                        <div class="description-min">
+                            / person
+                        </div>
+                    </div>
+            
+                    <span class="money"><b>$ </b><b id="montoPorPersona">0.00</b></span>
+                </div>
+            </div>
+        
+            <button id="reset" type="reset">Reset</button>
+        </div>
     </div>
-  </div>
 
-  <div>
-    <label for="people">Number of People</label>
-    <input value='0' type="number" name="people" id="people" onchange='cambiarTotal()'>
-
-  </div>
-
-  <div>
-    <div>
-      Tip Amount
-      / person:
-
-      <span><b>$ </b><b id="propinaPorPersona">0.00</b></span>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
     </div>
 
-      <div>
-        Total
-        / person:
-
-        <span><b>$ </b><b id="montoPorPersona">0.00</b></span>
-      </div>
-
-      <button>Reset</button>
-  </div>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-  <script src="./js/script.js"></script>
-  <script src="./js/functions.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/functions.js"></script>
 </body>
+
 </html>

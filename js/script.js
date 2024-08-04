@@ -25,8 +25,7 @@ function cambiarPropina(button) {
     calcularPropina(propina)
     cambiarTotal()
 
-    const botones = document.getElementsByClassName('boton')[2]
-    console.log(botones.classList.add('active'))
+    changeButtonBackground(button)
 }
 
 function calcularPropina (propina) {
@@ -35,4 +34,14 @@ function calcularPropina (propina) {
     } else {
         propinaPorPersona.innerText = (cuentaTotal * propina) / personas
     }
+}
+
+// función para cambiar el color del botón que se selecciona
+const changeButtonBackground = (button) => {
+    const botones = document.getElementsByClassName('boton')
+    Array.from(botones).forEach(boton => {
+        boton.classList.remove('active')
+    })
+
+    button.classList.add('active')
 }

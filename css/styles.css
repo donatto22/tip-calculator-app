@@ -1,14 +1,129 @@
+/* Space Mono */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
-    --strong-cyan: hsl(172, 67%, 45%)
+    --strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    font-size: 24px;
+    font-family: "Space Mono", monospace;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--Light-grayish-cyan);
+}
+
+#calculator {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    gap: 2em;
+    background-color: var(--white);
+    padding: 2em;
+    border-radius: 1em;
+}
+
+#calculator > div {
+    width: 50%;
+}
+
+#left > div {
+    margin-bottom: 1em;
+}
+
+#left input {
+    border-radius: 6px;
+    padding: .4em 1em;
+    border: 0;
+    background-color: var(--Very-light-grayish-cyan);
+}
+
+#right {
+    background-color: var(--Very-dark-cyan);
+    border-radius: .8em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-title {
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.description-min {
+    font-size: 14px;
+    color: var(--Grayish-cyan)
+}
+
+.money {
+    color: var(--Light-grayish-cyan);
+}
+
+#reset {
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: var(--strong-cyan);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+body {
+    align-content: center;
+    height: 100vh;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
 }
 
 button {
-    background-color: rgb(0, 24, 20);
+    cursor: pointer;
+}
+
+.boton {
+    background-color: var(--Very-dark-cyan);
+    color: var(--white);
     border: 0;
-    color: rgb(47, 251, 254);
-    padding: .2em 1em;
+    padding: .4em 0;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .active {
-    background-color: rgb(0, 101, 84);
+    background-color: var(--strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+#grid-control {
+    width: 100%;
+    display: grid;
+    gap: .4em;
+    grid-template-columns: repeat(3, calc((100% / 3) - .3em));
+    grid-template-rows: repeat(3, auto);
+}
+
+#grid-control input {
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--Very-light-grayish-cyan);
+    border: 0;
 }
